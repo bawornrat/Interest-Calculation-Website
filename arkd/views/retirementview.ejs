@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetirementPage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+        /*header {
+            background-color: #303f75;
+            padding: 5px;
+            text-align: right;
+            font-size: 30px;
+            color: white;
+            
+        }*/
+        header {
+            background-color: #303f75;
+            padding: 5px;
+            text-align: right;
+            font-size: 20px;
+            color: black;
+            font-family: "Mitr", sans-serif;
+        }
+        .box2{
+            padding: 10px 20px;
+            background-color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin: 10px;
+            text-align: right;
+            display:inline-block;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        body {
+            font-family: "Mitr", sans-serif;
+            background-color: #ffe8a3;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+        h2 {
+            display: inline-block; /* เพื่อให้พื้นหลังเหมือนกับข้อความ */
+            color: white;
+            background-color: #455B68; /* สีพื้นหลัง */
+            padding: 5px; /* ขอบข้อความ */
+            border: 5px solid #455B68;
+            border-radius: 50px;
+            font-size: 20px;
+        }
+        
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 50px;
+            max-width: 90%; /* กำหนดความกว้างสูงสุดให้กับ container */
+            margin-left: auto; /* จัดวางตามศูนย์กลางด้านซ้ายขวา */
+            margin-right: auto;
+
+        }
+        .second_container {
+            width: 70%;
+            margin: 0 auto;
+            text-align: left;
+            margin-top: 70px;
+
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 200px 150px auto;
+            gap: 10px;
+            background-color: #ffe8a3;
+            padding: 10px;
+        }
+
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid black;
+            text-align: center;
+            font-size: 30px;
+        }
+        .center {
+            text-align: right; /* จัดปุ่ม "Home" ชิดขวา */
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ffc266;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 24px;
+            font-family: "Mitr", sans-serif;
+        }
+        .button:hover {
+            background-color: #303f75;
+            color: white;
+        }
+        .exit-button {
+            background-color: #ffa64d;  
+        }
+        .exit-button:hover {
+            background-color: #ffa64d;
+        }
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 450px; /* Should be removed. Only for demonstration */
+            margin: 10px 0;
+            padding-left: 60px;
+            background-color:#ffe8a3;
+        }   
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        * {
+          box-sizing: border-box;
+        }footer {
+            background-color: #303f75;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #ddd; 
+            color: white;
+            font-family: "Mitr", sans-serif;
+}
+    </style>
+</head>
+<header>
+    <a class='box2'>ARKD</a>
+</header>
+<body>
+<div class="row"><!--
+  <div class="column" style="background-color:#aaa;">
+
+
+   <h2>ก่อนเกษียณ</h2>
+    <h3>อายุปัจจุบัน:           <input type="number" for="age" oninput="validateInputs()">ปี</h3>
+    <h3>วางแผนเกษียณตอนอายุ:  <input type="number" for="afterage" oninput="validateInputs()">ปี</h3>
+    <h3>เงินเก็บเดิม:          <input type="number" for="savedmoney" oninput="validateInputs()">บาท</h3>
+    <h3>ดอกเบี้ยรับ:           <input type="number" for="intincome" oninput="validateInputs()">%/ปี</h3>
+    <h3>เงินเฟ้อ:              <input type="number" for="infmoney" oninput="validateInputs()">%/ปี</h3>
+    
+    <h2>หลังเกษียณ</h2>
+    <h3>คาดว่าจะมีอายุถึง:      <input type="number" for="estage" oninput="validateInputs()">ปี</h3>
+    <h3>ค่าใช้จ่าย:            <input type="number" for="payout" oninput="validateInputs()">บาท/เดือน</h3>
+    <h2 class="button" onclick="clearInputs()">ล้าง</h2>
+    <a href="/retirementcal" class="button">คำนวณ</a>
+  </div> 
+  <form id="retirementForm" action="/retirementcal" method="POST">
+-->
+<div class="column">
+<form id="retirementForm" action="/retirementcal" method="POST">
+
+  
+    <h2>ก่อนเกษียณ</h2><br>
+    <div class="grid-container" >
+    <label for="age">อายุปัจจุบัน: </label>
+    <input type="number" id="age" name="age" oninput="validateInputs()" required> ปี<br>
+    
+    <label for="afterage">วางแผนเกษียณตอนอายุ: </label>
+    <input type="number" id="afterage" name="afterage" oninput="validateInputs()" required> ปี<br>
+    
+    <label for="savedmoney">เงินเก็บเดิม: </label>
+    <input type="number" id="savedmoney" name="savedmoney" oninput="validateInputs()" required> บาท<br>
+    
+    <label for="intincome">ดอกเบี้ยรับ: </label>
+    <input type="number" id="intincome" name="intincome" oninput="validateInputs()" required> %/ปี<br>
+    
+    <label for="infmoney">เงินเฟ้อ: </label>
+    <input type="number" id="infmoney" name="infmoney" oninput="validateInputs()" required> %/ปี<br>
+    </div>
+
+    <h2>หลังเกษียณ</h2><br>
+    <div class="grid-container" >
+    <label for="estage">คาดว่าจะมีอายุถึง: </label>
+    <input type="number" id="estage" name="estage" oninput="validateInputs()" required> ปี<br>
+    
+    <label for="payout">ค่าใช้จ่าย: </label>
+    <input type="number" id="payout" name="payout" oninput="validateInputs()" required> บาท/เดือน<br>
+    </div>
+    
+  
+</form>
+</div> 
+
+<% if (showResult) { %>
+ 
+  <div class="column" style="background-color:#FFFAEA;">
+    <h3>ผลลัพธ์การคำนวณ</h3>
+    <p>เก็บเงินก่อนเกษียณ: <%= sumretire[0] %>          ปี</p>
+    <p>ใช้เงินหลังเกษียณ: <%= sumretire[1] %>            ปี</p>
+    <p>ค่าใช้จ่าย</h3>
+    <p>ณ ปัจจุบัน: <%= sumretire[2].toFixed(2) %>               บาท/เดือน</p>
+    <p>ณ วันเกษียณ(ปรับเงินเฟ้อ):  <%= sumretire[3].toFixed(2) %>           บาท/เดือน</p>
+    <p>ต้องมีเงินเก็บ ณ วันเกษียณ: <%= sumretire[4].toFixed(2) %>   บาท</p>
+    <p>เงินเก็บเดิม(รวมดอกเบี้ยรับ):  <%= sumretire[5].toFixed(2) %>       บาท</p>
+    <p>ต้องเก็บเงินเพิ่ม:    <%= sumretire[6].toFixed(2) %>           บาท </p>
+  </div>
+
+<% } %>
+</div>
+  <!--
+  <div class="column" style="background-color:#bbb;">
+    
+    <h3>เก็บเงินก่อนเกษียณ:           <input type="number" id="savemoneybeforeretire" oninput="validateInputs()" readonly>ปี</h3>
+    <h3>ใช้เงินหลังเกษียณ:          <input type="number" id="beforeretmoney" oninput="validateInputs()" readonly>ปี</h3>
+    <h3>ค่าใช้จ่าย</h3>
+    <h3>ณ ปัจจุบัน:              <input type="number" id="presentmoney" oninput="validateInputs()" readonly>บาท/เดือน</h3>
+    <h3>ณ วันเกษียณ(ปรับเงินเฟ้อ):           <input type="number" id="retmoney" oninput="validateInputs()" readonly>บาท/เดือน</h3>
+    <h3>ต้องมีเงินเก็บ ณ วันเกษียณ: <input type="number" id="rettotalmoney" oninput="validateInputs()" readonly>บาท</h3>
+    <h3>เงินเก็บเดิม(รวมดอกเบี้ยรับ):      <input type="number" id="savemoney2" oninput="validateInputs()" readonly>บาท</h3>
+    <h3>ต้องเก็บเงินเพิ่ม:            <input type="number" id="outcome" oninput="validateInputs()" readonly>บาท /
+    เก็บเงินเพิ่มต่อเดือน:     <input type="number" id="outmonth" oninput="validateInputs()" readonly>บาท</h3>
+  </div>-->
+</div>
+<br>
+<center>
+  <a href="/" class="button"> Home</a> 
+  <a href="#" class="button" onclick="clearInputs()">ล้าง</a>
+  <a class="button" onclick="validateForm()">คำนวณ</a></center>
+<script>
+  function submitForm() {
+  document.getElementById("retirementForm").submit();
+}
+
+        function clearInputs() {
+            // เลือกทุก input ที่มี type เป็น number ใน class="column"
+            var inputs = document.querySelectorAll('.column input[type="number"]');
+            // วนลูปผ่าน inputs และกำหนดค่าให้เป็น ''
+            inputs.forEach(function(input) {
+            input.value = '';
+            });
+        }
+
+        function validateInputs() {
+            // เลือกทุก input ที่มี type เป็น number ใน class="column"
+            var inputs = document.querySelectorAll('.column input[type="number"]');
+            // วนลูปผ่าน inputs เพื่อตรวจสอบและป้องกันค่าที่ไม่ใช่ตัวเลข
+            inputs.forEach(function(input) {
+            // ถ้าค่าที่ถูกใส่ไม่ใช่ตัวเลข ให้กำหนดค่าใหม่เป็น ''
+            if (isNaN(input.value) || input.value === '' || parseFloat(input.value) < 0) {
+            input.value = '';
+              }
+            });
+        }
+
+        function calculateSavings() {
+    var age = parseFloat(document.getElementById("age").value);
+    var afterage = parseFloat(document.getElementById("afterage").value);
+    var savedmoney1 = parseFloat(document.getElementById("savedmoney1").value);
+    var infmoney = parseFloat(document.getElementById("infmoney").value);
+    var intincome = parseFloat(document.getElementById("intincome").value);
+    var estage = parseFloat(document.getElementById("estage").value);
+    var payout = parseFloat(document.getElementById("payout").value);
+
+    // คำนวณจำนวนปีเก็บเงินก่อนเกษียณ่
+    var savemoneybeforeretire = afterage - age;
+
+    // คำนวณจำนวนปีใช้เงินหลังเกษียณ
+    var beforeretmoney = estage - afterage;
+
+    // คำนวณค่าใช้จ่าย ณ ปัจจุบัน
+    var presentmoney = payout;
+
+    // คำนวณค่าใช้จ่าย ณ วันเกษียณ
+    
+    var retmoney = payout * Math.pow(1 + (infmoney/100),savemoneybeforeretire);
+
+    //คำนวณเงินเก็บ ณ วันเกษียณ
+    var rettotalmoney = ((retmoney * 12 * beforeretmoney));
+
+    // คำนวณเงินเก็บเดิม(รวมดอกเบี้ย)
+    var savemoney2 = savedmoney1 * Math.pow(1 + (intincome / 100), savemoneybeforeretire);
+
+    // คำนวณเก็บเงินเพิ่ม
+    var outcome = (rettotalmoney - savemoney2);
+
+    // คำนวณเก็บเงินต่อเดือนเ
+    var outmonth = (outcome / (beforeretmoney * 12));
+
+    // แสดงผลลัพธ์ใน input ที่มี id เป็น "savemoneybeforeretire"
+    document.getElementById("savemoneybeforeretire").value = savemoneybeforeretire;
+    document.getElementById("beforeretmoney").value = beforeretmoney;
+    document.getElementById("presentmoney").value = presentmoney.toFixed(2);
+    document.getElementById("retmoney").value = retmoney.toFixed(2);
+    document.getElementById("rettotalmoney").value = rettotalmoney.toFixed(2);
+    document.getElementById("savemoney2").value = savemoney2.toFixed(2);
+    document.getElementById("outcome").value = outcome.toFixed(2);
+    document.getElementById("outmonth").value = outmonth.toFixed(2);
+}
+
+        function exitApplication() {
+            // บางเว็บเบราว์เซอร์อาจไม่อนุญาตให้ปิดหน้าต่างโดยอัตโนมัติ
+            // ในกรณีที่ไม่สามารถปิดหน้าต่างได้ คุณสามารถแสดงข้อความแจ้งเตือนได้แทน
+            window.close(); // ปิดหน้าต่างปัจจุบัน
+        }
+        function validateForm() {
+        var age = document.getElementById("age").value;
+        var afterage = document.getElementById("afterage").value;
+        var savedmoney = document.getElementById("savedmoney").value;
+        var intincome = document.getElementById("intincome").value;
+        var infmoney = document.getElementById("infmoney").value;
+        var estage = document.getElementById("estage").value;
+        var payout = document.getElementById("payout").value;
+
+        // ตรวจสอบว่าข้อมูลถูกกรอกครบหรือไม่
+        if (age == "" || afterage == "" || savedmoney == "" || intincome == "" || infmoney == "" || estage == "" || payout == "") {
+            alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
+            return false;
+        } else {
+            submitForm(); // ถ้าข้อมูลถูกกรอกครบทุกช่องให้ส่งฟอร์ม
+        }
+    }
+    
+    </script>
+    <footer>
+      <div class="copyright">
+          © Copyright 2024 CP456 SOFTWARE ENGINEERING
+      </div>
+  </footer>
+</body>
+</html>

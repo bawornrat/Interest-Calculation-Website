@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompoundInterest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+       header {
+            background-color: #303f75;
+            padding: 5px;
+            text-align: right;
+            font-size: 20px;
+            color: black;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe8a3;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ffc266;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 24px;
+        }
+        h1 {
+            font-size: 60px;
+        }
+        label {
+            font-size: 20px; /* ปรับขนาดฟอนต์ของ label */
+            font-family: "Mitr", sans-serif;
+        }
+
+        .second_container {
+            width: 70%;
+            margin: 0 auto;
+            text-align: left;
+            margin-top: 50px;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ffc266;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 24px;
+            font-family: "Mitr", sans-serif;
+        }
+        .button:hover {
+            background-color: #303f75;
+            color: white;
+        }
+        .exit-button {
+            background-color: #e74c3c;
+        }
+        .exit-button:hover {
+            background-color: #c0392b;
+        }
+        .square{
+            background-color: rgb(106, 106, 241);
+            border-radius: 10px;
+            border-: 5px;
+        }
+        .box{
+            padding: 10px 20px;
+            background-color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin: 10px;
+            text-align: right;
+            display:inline-block;
+            font-size: 20px
+        }
+        .box2{
+            padding: 10px 20px;
+            background-color: #455B68;
+            border-radius:30px;
+            display:inline-block;
+            margin: 10px;
+            width:auto;
+        }
+        footer {
+            background-color: #303f75;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #ddd; 
+            color: white;
+            font-family: "Mitr", sans-serif;
+        }
+        h2 {
+            font-size: 30px;
+            font-family: "Mitr", sans-serif;
+        }
+        h3 {
+            font-size: 45px;
+        }
+        form{
+            font-size: 25px;
+            text-align: left;
+        }
+        input {
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<header>
+    <h2 class='box'>ARKD</h2>
+</header>
+<body>
+<div><br>
+    <br>
+    <br>
+    <center><h2 class='box2' style="color: white;">คำนวณดอกเบี้ยทบต้น</h2></center>
+    <br>
+    
+        <form id="addUserForm" action="/CompoundInterest" method="POST">
+           <center><br>
+            
+            <label for="bankname">บริษัท/ธนาคาร:</label>
+            <input type="text" id="bankname" name="bankname" required>
+            <br>
+            
+            <label for="beforesavedmoney">เงินฝากเดิม:
+            <input type="number" id="beforesavedmoney" name="beforesavedmoney" required min="0">บาท</label>
+            <br>
+            <label for="permonth">ฝากเดือนละ:
+            <input type="number" id="permonth" name="permonth" required min="0">บาท</label>
+            
+            <br>
+            <label for="duration">ระยะเวลา:
+            <input type="number" id="duration" name="duration" required min="0">ปี</label>
+            
+            <br>
+            <label for="intrate">อัตราดอกเบี้ย:
+            <input type="number" id="intrate" name="intrate" required min="0" step="any">%ต่อปี</label>
+            <br>
+            <br>
+            <br>
+            <a class="button" onclick="clearInputs()">ล้าง</a>
+            <a onclick="validateForm()" class="button" name="Compared">คำนวณ</a>
+            <a href="/" class="button">Home</a>
+       
+        </center>
+        </form>
+        
+        
+       <!-- <table>
+            <tr>
+                <tr>
+                    <td><h3>บริษัท/ธนาคาร:</h3></td>
+                    <td><h3><input type="text" id="bankname"></h3></td>
+                    <td><h3></h3></td>
+                    <td><h3>บริษัท/ธนาคาร:</h3></td>
+                    <td><h3><input type="text" id="bankname1" ></h3></td>
+                    <td><h3></h3></td>
+                    <td><h3>บริษัท/ธนาคาร:</h3></td>
+                    <td><h3><input type="text"  id="bankname2" ></h3></td>
+                    <td><h3></h3></td>
+                </tr>
+                <td><h3>เงินฝากเดิม:</h3></td>
+                <td><h3><input type="number" id="beforesavedmoney"></h3></td>
+                <td><h3>บาท</h3></td>
+                <td><h3>เงินฝากเดิม:</h3></td>
+                <td><h3><input type="number" id="beforesavedmoney1"></h3></td>
+                <td><h3>บาท</h3></td>
+                    <td><h3>เงินฝากเดิม:</h3></td>
+                <td><h3><input type="number" id="beforesavedmoney2"></h3></td>
+                <td><h3>บาท</h3></td>
+            </tr>
+            <tr>
+                <td><h3>ฝากเดือนละ:</h3></td>
+                <td><h3><input type="number" id="permonth"></h3></td>
+                <td><h3>บาท</h3></td>
+                <td><h3>ฝากเดือนละ:</h3></td>
+                <td><h3><input type="number" id="permonth1"></h3></td>
+                <td><h3>บาท</h3></td>
+                <td><h3>ฝากเดือนละ:</h3></td>
+                <td><h3><input type="number" id="permonth2"></h3></td>
+                <td><h3>บาท</h3></td>
+            </tr>
+            <tr>
+                <td><h3>ระยะเวลา:</h3></td>
+                <td><h3><input type="number" id="duration"></h3></td>
+                <td><h3>ปี</h3></td>
+                <td><h3>ระยะเวลา:</h3></td>
+                <td><h3><input type="number" id="duration1"></h3></td>
+                <td><h3>ปี</h3></td>
+                <td><h3>ระยะเวลา:</h3></td>
+                <td><h3><input type="number" id="duration2"></h3></td>
+                <td><h3>ปี</h3></td>
+            </tr>
+            <tr>
+                <td><h3>อัตราดอกเบี้ย:</h3></td>
+                <td><h3><input type="number" id="intrate"></h3></td>
+                <td><h3>% ต่อปี</h3></td>
+                <td><h3>อัตราดอกเบี้ย:</h3></td>
+                <td><h3><input type="number" id="intrate1"></h3></td>
+                <td><h3>% ต่อปี</h3></td>
+                <td><h3>อัตราดอกเบี้ย:</h3></td>
+                <td><h3><input type="number" id="intrate2"></h3></td>
+                <td><h3>% ต่อปี</h3></td>
+            </tr>
+        </table>
+
+        <h2 class="button" onclick="clearInputs()">ล้าง</h2>
+        <a href="javascript:void(0);" class="button" onclick="calculateSavingsAndRedirect()">คำนวณ</a>
+        <a href="index.html" style="font-size: 18px;" class="button">Home</a></center>-->
+    
+    </div>
+
+
+<!--
+<script>
+    function calculateSavingsAndRedirect() {
+    // Get input values
+    var bankName = document.getElementById("bankname").value;
+    var bankName1 = document.getElementById("bankname1").value;
+    var bankName2 = document.getElementById("bankname2").value;
+    var beforeSavedMoney = parseFloat(document.getElementById("beforesavedmoney").value);
+    var perMonth = parseFloat(document.getElementById("permonth").value);
+    var duration = parseFloat(document.getElementById("duration").value);
+    var intrate = parseFloat(document.getElementById("intrate").value);
+    var beforeSavedMoney1 = parseFloat(document.getElementById("beforesavedmoney1").value);
+    var perMonth1 = parseFloat(document.getElementById("permonth1").value);
+    var duration1 = parseFloat(document.getElementById("duration1").value);
+    var intrate1 = parseFloat(document.getElementById("intrate1").value);
+    var beforeSavedMoney2 = parseFloat(document.getElementById("beforesavedmoney2").value);
+    var perMonth2 = parseFloat(document.getElementById("permonth2").value);
+    var duration2 = parseFloat(document.getElementById("duration2").value);
+    var intrate2 = parseFloat(document.getElementById("intrate2").value);
+    if (isNaN(beforeSavedMoney) || isNaN(perMonth) || isNaN(duration) || isNaN(intrate)) {
+            alert("โปรดกรอกข้อมูลให้ครบทุกช่อง");
+            return; // ออกจากฟังก์ชันหากข้อมูลไม่ครบ
+        }
+
+    // Calculate total saved money
+    var allSavedMoney = beforeSavedMoney + (perMonth * 12 * duration);
+    var allSavedMoney1 = beforeSavedMoney1 + (perMonth1 * 12 * duration1);
+    var allSavedMoney2 = beforeSavedMoney2 + (perMonth2 * 12 * duration2);
+
+    // คำนวณค่า Firstmoney
+    var Firstmoney = beforeSavedMoney + (perMonth * 12);
+    var Firstmoney1 = beforeSavedMoney1 + (perMonth1 * 12);
+    var Firstmoney2 = beforeSavedMoney2 + (perMonth2 * 12);
+
+    // สร้างอาร์เรย์ Yearmoney เพื่อเก็บค่า Calintrate
+    var Yearmoney = [];
+    var Yearmoney1 = [];
+    var Yearmoney2 = [];
+
+    // วนลูปเพื่อคำนวณ Calintrate และเพิ่มค่าลงในอาร์เรย์ Yearmoney (0)
+    for (var i = 0; i < duration; i++) {
+    // คำนวณค่า Calintrate ตามสูตรที่กำหนด
+    var Calintrate = Firstmoney * (intrate / 100);
+    // เพิ่มค่า Calintrate เข้าไปในอาร์เรย์ Yearmoney
+    Yearmoney.push(Calintrate);
+    // นำค่า Firstmoney ล่าสุดมาแทนค่า beforeSavedMoney เพื่อใช้ในการคำนวณรอบถัดไป
+    beforeSavedMoney = Firstmoney +  Calintrate;
+    // คำนวณค่า Firstmoney ใหม่สำหรับรอบถัดไป
+    Firstmoney += perMonth * 12;
+}
+
+    // วนลูปเพื่อคำนวณ Calintrate และเพิ่มค่าลงในอาร์เรย์ Yearmoney  (1)
+    for (var i = 0; i < duration1; i++) {
+    // คำนวณค่า Calintrate ตามสูตรที่กำหนด
+    var Calintrate1 = Firstmoney1 * (intrate1 / 100);
+    // เพิ่มค่า Calintrate เข้าไปในอาร์เรย์ Yearmoney
+    Yearmoney1.push(Calintrate1);
+    // นำค่า Firstmoney ล่าสุดมาแทนค่า beforeSavedMoney เพื่อใช้ในการคำนวณรอบถัดไป
+    beforeSavedMoney1 = Firstmoney1 +  Calintrate1;
+    // คำนวณค่า Firstmoney ใหม่สำหรับรอบถัดไป
+    Firstmoney1 += perMonth1 * 12;
+}
+
+    // วนลูปเพื่อคำนวณ Calintrate และเพิ่มค่าลงในอาร์เรย์ Yearmoney  (2)
+    for (var i = 0; i < duration2; i++) {
+    // คำนวณค่า Calintrate ตามสูตรที่กำหนด
+    var Calintrate2 = Firstmoney2 * (intrate2 / 100);
+    // เพิ่มค่า Calintrate เข้าไปในอาร์เรย์ Yearmoney
+    Yearmoney2.push(Calintrate2);
+    // นำค่า Firstmoney ล่าสุดมาแทนค่า beforeSavedMoney เพื่อใช้ในการคำนวณรอบถัดไป
+    beforeSavedMoney2 = Firstmoney2 +  Calintrate2;
+    // คำนวณค่า Firstmoney ใหม่สำหรับรอบถัดไป
+    Firstmoney2 += perMonth2 * 12;
+}
+
+    // คำนวณค่า Totalintrate โดยการบวกค่าในอาร์เรย์ Yearmoney ทั้งหมด
+    var Totalintrate = Yearmoney.reduce(function(total, amount) {
+    return total + amount;
+}, 0);
+
+    // คำนวณค่า Totalintrate โดยการบวกค่าในอาร์เรย์ Yearmoney ทั้งหมด (1)
+    var Totalintrate1 = Yearmoney1.reduce(function(total, amount) {
+    return total + amount;
+},0);
+
+    // คำนวณค่า Totalintrate โดยการบวกค่าในอาร์เรย์ Yearmoney ทั้งหมด (2)
+    var Totalintrate2 = Yearmoney2.reduce(function(total, amount) {
+    return total + amount;
+}, 0);
+
+    // Calculate total saved money
+    var SaveMoneyInterest = allSavedMoney + Totalintrate;
+    var SaveMoneyInterest1 = allSavedMoney1 + Totalintrate1;
+    var SaveMoneyInterest2 = allSavedMoney2 + Totalintrate2;
+
+    // เมื่อคำนวณเสร็จสิ้น ให้เปลี่ยน URL เพื่อเปลี่ยนหน้าไปที่ ComparedInterest.html
+    window.location.href = "ComparedInterest.html?all_saved_money=" + allSavedMoney + "&all_saved_money1=" + allSavedMoney1 + "&all_saved_money2=" + allSavedMoney2 + "&all_interest=" + Totalintrate + "&all_interest1=" + Totalintrate1 + "&all_interest2=" + Totalintrate2 + "&save_money_interest=" + SaveMoneyInterest + "&save_money_interest1=" + SaveMoneyInterest1 + "&save_money_interest2=" + SaveMoneyInterest2 + "&bank_name=" + bankName + "&bank_name1=" + bankName1 + "&bank_name2=" + bankName2;
+
+}
+-->
+<script>
+    function validateForm() {
+        var bankname = document.getElementById("bankname").value;
+        var beforesavedmoney = document.getElementById("beforesavedmoney").value;
+        var permonth = document.getElementById("permonth").value;
+        var duration = document.getElementById("duration").value;
+        var intrate = document.getElementById("intrate").value;
+
+        if (bankname === "" || beforesavedmoney === "" || permonth === "" || duration === "" || intrate === "") {
+            alert("โปรดกรอกข้อมูลให้ครบทุกช่อง");
+            return false; // ไม่ส่งข้อมูลหากไม่ครบทุกช่อง
+        } else {
+            submitForm(); // ส่งข้อมูลหากข้อมูลครบทุกช่อง
+        }
+    }
+        function clearInputs() {
+            // เลือกทุก input ที่มี type เป็น number ใน class="box"
+            var inputs = document.querySelectorAll('.box input');
+            // วนลูปผ่าน inputs และกำหนดค่าให้เป็น ''
+            inputs.forEach(function(input) {
+            input.value = '';
+            });
+        }
+
+        function exitApplication() {
+            // บางเว็บเบราว์เซอร์อาจไม่อนุญาตให้ปิดหน้าต่างโดยอัตโนมัติ
+            // ในกรณีที่ไม่สามารถปิดหน้าต่างได้ คุณสามารถแสดงข้อความแจ้งเตือนได้แทน
+            window.close(); // ปิดหน้าต่างปัจจุบัน
+        }
+        function submitForm() {
+        document.getElementById("addUserForm").submit();
+}
+
+    </script>
+
+</body>
+<footer>
+    <div class="copyright">
+        © Copyright 2024 CP456 SOFTWARE ENGINEERING
+    </div>
+</footer>
+</html>

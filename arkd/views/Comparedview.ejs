@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComparedInterest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+        header {
+            background-color: #303f75;
+            padding: 5px;
+            text-align: right;
+            font-size: 20px;
+            color: black;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe8a3;
+            text-align: center;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ffc266;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 24px;
+            font-family: "Mitr", sans-serif;
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: normal;
+            font-family: "Mitr", sans-serif;
+        }
+        .button:hover {
+            background-color: #303f75;
+            color: white;
+        }
+        .exit-button {
+            background-color: #e74c3c;
+        }
+        .exit-button:hover {
+            background-color: #c0392b;
+
+        }
+        .box{
+            padding: 10px 20px;
+            background-color: #FFFAEA;
+            text-decoration: none;
+            border-radius: 30px;
+            margin: 10px;
+            text-align: right;
+            display:inline-block;
+            font-size: 10px;
+            font-family: "Mitr", sans-serif;
+        }
+        .box2{
+            padding: 10px 20px;
+            background-color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin: 10px;
+            text-align: right;
+            display:inline-block;
+            font-size: 20px;
+            font-family: "Mitr", sans-serif;
+        }
+        tr.spacer-row td {
+            padding-top: 50px; /* ปรับขนาดระยะตามที่ต้องการ */
+        }
+        table {
+            border: 2px solid #303f75; /* เส้นกรอบตารางสีฟ้าหนาสองพิกเซล */
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid #303f75; /* เส้นกรอบเซลล์สีฟ้าหนึ่งพิกเซล */
+            padding: 10px; /* เพิ่มระยะห่างภายในเซลล์ */
+            font-size: 20px;
+            text-align: right;
+            font-family: "Mitr", sans-serif;
+        }
+        footer {
+            background-color: #303f75;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #ddd;
+            color: white;
+            font-family: "Mitr", sans-serif;
+        }
+    
+
+    </style>
+</head>
+<header>
+    <h2 class='box2'>ARKD</h2>
+</header>
+<body>
+ 
+    <div class='box'>
+    <!--
+        Function เรียกข้อมูล
+    <table>
+      <tr>
+        <td><h3>บริษัท/ธนาคาร:</h3></td>
+        <td><h3><input type="text" id="bank_name"></h3></td>
+        <td><h3></h3></td>
+        <td><h3>บริษัท/ธนาคาร:</h3></td>
+        <td><h3><input type="text" id="bank_name1"></h3></td>
+        <td><h3></h3></td>
+        <td><h3>บริษัท/ธนาคาร:</h3></td>
+        <td><h3><input type="text"  id="bank_name2"></h3></td>
+        <td><h3></h3></td>
+      </tr>
+      <tr>
+        <td><h3>เงินฝากรวม:</h3></td>
+        <td><h3><input type="number" name="all_saved_money" id="all_saved_money"></h3></td>
+        <td><h3>บาท</h3></td>
+        <td><h3>เงินฝากรวม:</h3></td>
+        <td><h3><input type="number" name="all_saved_money1" id="all_saved_money1"></h3></td>
+        <td><h3>บาท</h3></td>
+        <td><h3>เงินฝากรวม:</h3></td>
+        <td><h3><input type="number" name="all_saved_money1" id="all_saved_money2"></h3></td>
+        <td><h3>บาท</h3></td>
+      </tr>
+      <tr>
+        <td><h3>ดอกเบี้ยรวม:</h3></td>
+        <td><h3><input type="number" name="all_interest" id="all_interest"></h3></td>
+        <td><h3>บาท</h3></td>
+        <td><h3>ดอกเบี้ยรวม:</h3></td>
+        <td><h3><input type="number" name="all_interest" id="all_interest1"></h3></td>
+        <td><h3>บาท</h3></td>
+        <td><h3>ดอกเบี้ยรวม:</h3></td>
+        <td><h3><input type="number" name="all_interest" id="all_interest2"></h3></td>
+        <td><h3>บาท</h3></td>
+      </tr>
+      <tr>
+        <td><h3>เงินฝากรวมดอกเบี้ย:</h3></td>
+        <td><h3><input type="number" name="save_money_interest" id="save_money_interest"></h3></td>
+        <td><h3>บาท</h3></td>
+        <td><h3>เงินฝากรวมดอกเบี้ย:</h3></td>
+        <td><h3><input type="number" name="save_money_interest" id="save_money_interest1"></h3></td>
+        <td><h3>บาท</h3></td>
+        <td><h3>เงินฝากรวมดอกเบี้ย:</h3></td>
+        <td><h3><input type="number" name="save_money_interest" id="save_money_interest2"></h3></td>
+        <td><h3>บาท</h3></td>
+      </tr>
+      <tr class="spacer-row">
+        <td><h3>บริการ</h3></td>
+        <td><h3><input type="text" name="service1" id="service1"></h3></td>
+        <td><h3>มีดอกเบี้ยรวม</h3></td>
+        <td><h3><input type="number" name="highest_interest" id="highest_interest"></h3></td>
+        <td><h3>สูงที่สุด</h3></td>
+      </tr>
+      <tr>
+        <td><h3>บริการ</h3></td>
+        <td><h3><input type="text" name="service2" id="service2"></h3></td>
+        <td><h3>มีดอกเบี้ยรวม</h3></td>
+        <td><h3><input type="number" name="lowest_service" id="lowest_service"></h3></td>
+        <td><h3>ต่ำที่สุด</h3></td>
+
+      </tr>
+      <tr>
+        <td> <h3>โดยอัตราเฉลี่ยของดอกเบี้ยรวมอยู่ที่</h3>
+        <td><h3><input type="number" name="avg_interest" id="avg_interest"></h3></td>
+        <td> <h3>บาท</h3></td>
+      </tr>
+    </table>
+
+    <a href="Statistic.html" class="button" style="font-size: 18px;">ดูสถิติที่ผ่านมา</a>
+    <a href="CompoundInterest.html" class="button" style="font-size: 18px;">คำนวณเพิ่มเติม</a>
+    <h2 class="button" onclick="clearInputs()" style="font-size: 18px;">ล้าง</h2>
+    <a href="index.html" class="button">Home</a>
+  </div>
+
+  <script>
+
+        // ฟังก์ชันดึงค่า parameters จาก URL
+    function getUrlParameter(name) {
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // ดึงข้อมูลเงินฝากรวมและกำหนดให้ค่านั้นแสดงในฟิลด์ที่มี ID เท่ากับ all_saved_money
+    var bankName = getUrlParameter('bank_name');
+    document.getElementById('bank_name').value = bankName;
+    var bankName1 = getUrlParameter('bank_name1');
+    document.getElementById('bank_name1').value = bankName1;
+    var bankName2 = getUrlParameter('bank_name2');
+    document.getElementById('bank_name2').value = bankName2;
+
+    var allSavedMoney = getUrlParameter('all_saved_money');
+    document.getElementById('all_saved_money').value = allSavedMoney;
+    var Totalintrate = getUrlParameter('all_interest');
+    document.getElementById('all_interest').value = Totalintrate;
+    var SaveMoneyInterest = getUrlParameter('save_money_interest');
+    document.getElementById('save_money_interest').value = SaveMoneyInterest;
+
+    var allSavedMoney1 = getUrlParameter('all_saved_money1');
+    document.getElementById('all_saved_money1').value = allSavedMoney1;
+    var Totalintrate1 = getUrlParameter('all_interest1');
+    document.getElementById('all_interest1').value = Totalintrate1 === '0' ? null : Totalintrate1;
+    var SaveMoneyInterest1 = getUrlParameter('save_money_interest1');
+    document.getElementById('save_money_interest1').value = SaveMoneyInterest1;
+
+    var allSavedMoney2 = getUrlParameter('all_saved_money2');
+    document.getElementById('all_saved_money2').value = allSavedMoney2;
+    var Totalintrate2 = getUrlParameter('all_interest2');
+    document.getElementById('all_interest2').value = Totalintrate2 === '0' ? null : Totalintrate2;
+    var SaveMoneyInterest2 = getUrlParameter('save_money_interest2');
+    document.getElementById('save_money_interest2').value = SaveMoneyInterest2;
+
+    // เรียกใช้ค่า all_interest จาก input และแปลงเป็นตัวเลข
+    var allInterest = parseFloat(document.getElementById('all_interest').value);
+    var allInterest1 = parseFloat(document.getElementById('all_interest1').value);
+    var allInterest2 = parseFloat(document.getElementById('all_interest2').value);
+
+    // เปรียบเทียบค่า all_interest, all_interest1, และ all_interest2 เพื่อหาค่าที่มากที่สุด
+    var highestInterest;
+    if (allInterest2 !== null && !isNaN(allInterest2)) {
+        highestInterest = Math.max(allInterest, allInterest1, allInterest2);
+    } else if (allInterest1 !== null && !isNaN(allInterest1)) {
+        highestInterest = Math.max(allInterest, allInterest1);
+    } else {
+        highestInterest = allInterest;
+    }
+
+// แสดงค่าที่มากที่สุดที่ id="highest_interest"
+document.getElementById('highest_interest').value = highestInterest;
+
+
+    if (highestInterest === allInterest) {
+    var bankName = document.getElementById('bank_name').value;
+    document.getElementById('service1').value = bankName;
+} else if (highestInterest === allInterest1) {
+    var bankName1 = document.getElementById('bank_name1').value;
+    document.getElementById('service1').value = bankName1;
+} else {
+    var bankName2 = document.getElementById('bank_name2').value;
+    document.getElementById('service1').value = bankName2;
+}
+
+
+    // หาค่าที่น้อยที่สุด
+    var lowestInterest;
+if (allInterest2 !== null && !isNaN(allInterest2)) {
+    lowestInterest = Math.min(allInterest, allInterest1, allInterest2);
+} else if (allInterest1 !== null && !isNaN(allInterest1)) {
+    lowestInterest = Math.min(allInterest, allInterest1);
+} else {
+    lowestInterest = allInterest;
+}
+
+// แสดงค่าที่น้อยที่สุดที่ id="lowest_service"
+document.getElementById('lowest_service').value = lowestInterest;
+
+
+    if (lowestInterest === allInterest) {
+    var bankName = document.getElementById('bank_name').value;
+    document.getElementById('service2').value = bankName;
+} else if (lowestInterest === allInterest1) {
+    var bankName1 = document.getElementById('bank_name1').value;
+    document.getElementById('service2').value = bankName1;
+} else {
+    var bankName2 = document.getElementById('bank_name2').value;
+    document.getElementById('service2').value = bankName2;
+}
+
+    var AVGallinterest;
+
+if (allInterest2 !== null && !isNaN(allInterest2)) {
+    AVGallinterest = (allInterest + allInterest1 + allInterest2) / 3;
+} else if (allInterest1 !== null && !isNaN(allInterest1)) {
+    AVGallinterest = (allInterest + allInterest1) / 2;
+} else {
+    AVGallinterest = allInterest;
+}
+
+// แสดงค่า AVGallinterest ที่ id="avg_interest"
+document.getElementById('avg_interest').value = AVGallinterest;
+
+
+    function clearInputs() {
+            // เลือกทุก input ที่มี type เป็น number ใน class="box"
+            var inputs = document.querySelectorAll('.box input[type="number"]');
+            // วนลูปผ่าน inputs และกำหนดค่าให้เป็น ''
+            inputs.forEach(function(input) {
+            input.value = '';
+            });
+        }
+    function exitApplication() {
+            // บางเว็บเบราว์เซอร์อาจไม่อนุญาตให้ปิดหน้าต่างโดยอัตโนมัติ
+            // ในกรณีที่ไม่สามารถปิดหน้าต่างได้ คุณสามารถแสดงข้อความแจ้งเตือนได้แทน
+            window.close(); // ปิดหน้าต่างปัจจุบัน
+        }
+
+    </script> 
+    -->
+
+    <center><br><table> 
+        <thead>
+            <tr>
+                <th>บริษัท/ธนาคาร</th>
+                <th>เงินฝากรวม</th>
+                <th>ดอกเบี้ยรวม</th>
+                <th>เงินฝากรวมดอกเบี้ย</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(function(user) { %>
+                <tr>
+                    
+                    <td><%= user.bankname %> </td>
+                    <td><%= user.allsavedmoney %> </td>
+                    <td><%= user.totalintrate.toFixed(2) %></td>
+                    <td><%= user.savemoneyinterest.toFixed(2) %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <BR>
+    <h1>บริการ <%= min[0].bankname %> มีดอกเบี้ยรวม <%= min[0].min.toFixed(2) %> บาท ต่ำที่สุด</h1> 
+    <h1>บริการ <%= max[0].bankname %> มีดอกเบี้ยรวม <%= max[0].max.toFixed(2) %> บาท สูงที่สุด</h1>
+    <h1>โดยอัตราเฉลี่ยของดอกเบี้ยรวมอยู่ที่ <%= avg[0].avg.toFixed(2) %> บาท</h1>
+    <a href="/statistic" class="button" name="Statistic">ดูสถิติที่ผ่านมา</a>
+    
+    <% if (showButton) { %>
+        <a href="/Compound" class="button">คำนวณเพิ่มเติม</a>
+    <% } %>
+    <a href="/clearUser" class="button">ล้างทั้งหมด</a>
+    <a href="/removeOneUser" class="button">ล้างเฉพาะข้อมูลล่าสุด</a>
+    <!--<h2 class="button" onclick="clearInputs()" style="font-size: 18px;">ล้าง</h2>
+    <a href="index.html" class="button">Home</a>-->
+</center></div>
+</body>
+<footer>
+    <div class="copyright">
+        © Copyright 2024 CP456 SOFTWARE ENGINEERING
+    </div>
+</footer>
+</html>

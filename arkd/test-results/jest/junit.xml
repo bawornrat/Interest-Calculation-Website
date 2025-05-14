@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="23" failures="0" errors="0" time="50.664">
+  <testsuite name="RetirementCalculator" errors="0" failures="0" skipped="0" timestamp="2024-05-04T08:49:47" time="0.575" tests="6">
+    <testcase classname="RetirementCalculator savemoneybeforeretire should return the number of years before retirement age" name="RetirementCalculator savemoneybeforeretire should return the number of years before retirement age" time="0.02">
+    </testcase>
+    <testcase classname="RetirementCalculator beforeretmoney should return the number of years in retirement" name="RetirementCalculator beforeretmoney should return the number of years in retirement" time="0.002">
+    </testcase>
+    <testcase classname="RetirementCalculator retmoney should return the retirement money with interest" name="RetirementCalculator retmoney should return the retirement money with interest" time="0.001">
+    </testcase>
+    <testcase classname="RetirementCalculator rettotalmoney should return the total retirement money" name="RetirementCalculator rettotalmoney should return the total retirement money" time="0.001">
+    </testcase>
+    <testcase classname="RetirementCalculator savemoneyplus should return the saved money with interest" name="RetirementCalculator savemoneyplus should return the saved money with interest" time="0.001">
+    </testcase>
+    <testcase classname="RetirementCalculator outcome should return the difference between total retirement money and saved money with interest" name="RetirementCalculator outcome should return the difference between total retirement money and saved money with interest" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-05-04T08:49:47" time="0.616" tests="12">
+    <testcase classname=" addUser should add a new user" name=" addUser should add a new user" time="0.029">
+    </testcase>
+    <testcase classname=" removeOneUser should remove a user" name=" removeOneUser should remove a user" time="0.003">
+    </testcase>
+    <testcase classname=" removeOneUser should return null if no user exists" name=" removeOneUser should return null if no user exists" time="0.001">
+    </testcase>
+    <testcase classname=" getUserCount should return the correct number of users" name=" getUserCount should return the correct number of users" time="0.005">
+    </testcase>
+    <testcase classname=" clearUsers should remove all users from the array" name=" clearUsers should remove all users from the array" time="0.002">
+    </testcase>
+    <testcase classname=" calculateallSavedMoney should calculate the total saved money for each user" name=" calculateallSavedMoney should calculate the total saved money for each user" time="0.002">
+    </testcase>
+    <testcase classname=" calculateTotalintrate should calculate the total interest rate for each user" name=" calculateTotalintrate should calculate the total interest rate for each user" time="0.001">
+    </testcase>
+    <testcase classname=" calculatesaveMoneyInterest should calculate saved money with interest correctly" name=" calculatesaveMoneyInterest should calculate saved money with interest correctly" time="0.001">
+    </testcase>
+    <testcase classname=" findLowestTotalintrate should return user with the lowest total interest rate" name=" findLowestTotalintrate should return user with the lowest total interest rate" time="0.002">
+    </testcase>
+    <testcase classname=" findLowestTotalintrate should return null when no users exist" name=" findLowestTotalintrate should return null when no users exist" time="0.001">
+    </testcase>
+    <testcase classname=" findHighTotalintrate should return user with the highest total interest rate" name=" findHighTotalintrate should return user with the highest total interest rate" time="0.001">
+    </testcase>
+    <testcase classname=" findAvgTotalintrate should return the average total interest rate across all users" name=" findAvgTotalintrate should return the average total interest rate across all users" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="webdriver" errors="0" failures="0" skipped="0" timestamp="2024-05-04T08:49:47" time="50.318" tests="5">
+    <testcase classname="webdriver compound" name="webdriver compound" time="9.935">
+    </testcase>
+    <testcase classname="webdriver retirement" name="webdriver retirement" time="9.299">
+    </testcase>
+    <testcase classname="webdriver ComparedInterest" name="webdriver ComparedInterest" time="9.679">
+    </testcase>
+    <testcase classname="webdriver Statistic" name="webdriver Statistic" time="9.731">
+    </testcase>
+    <testcase classname="webdriver Home" name="webdriver Home" time="10.865">
+    </testcase>
+  </testsuite>
+</testsuites>
