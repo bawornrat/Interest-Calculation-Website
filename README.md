@@ -8,6 +8,10 @@
 ![image](https://github.com/user-attachments/assets/13e2256e-d4a1-4273-ac49-b443e76bd072)
 ![image](https://github.com/user-attachments/assets/19f72679-65bf-421a-834d-f108fd1373fe)
 
+โปรเจคกลุ่ม 5 คน ฉันมีหน้าที่ ดังนี้
+- เก็บ Requirement แล้วออกแบบขั้นตอนการทำงานของเว็บไซต์
+- เตรียมสูตรคำนวณที่ใช้ในเว็บไซต์
+- ตรวจสอบความถูกต้องของเว็บไซ์
 
 
 
